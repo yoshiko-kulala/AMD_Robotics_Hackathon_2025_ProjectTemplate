@@ -1,17 +1,27 @@
-# AMD_Robotics_Hackathon_2025_[Project Name]
+# AMD_Robotics_Hackathon_2025_PackingMan
 <You coulde use the task you did in Mission2 as the project name, since Mission 1 is unified task for every team>
 
-**Title:** AMD_RoboticHackathon2025-[Your Work of Mission2]
+# **Title:** 
+AMD_RoboticHackathon2025-PackingMan
 
-**Team:** The name of your Team and Members
+# **Team:** 
+## Team Name
+Nyap IV
 
-**Summary** <of your task>
-...
+## Member
+- Masakazu Sueyoshi
+- Kosuke Tokuda
+- Hiroki Kyono
 
-**How To**: <reproduce your work in steps>
+
+# **Summary** <of your task>
+TODO
+
+# **How To**: <reproduce your work in steps>
+TODO
 
 **Delivery URL**
-
+TODO
 ```text
 •	URL of your dataset in Hugging Face
 •	URL of your model in Hugging Face
