@@ -120,7 +120,10 @@ To prevent overfitting and underfitting, we adjusted the step number parameter s
 ### Result of sequence operations (the original goal):
 
 Video: inserting the cup and cushioning material into the box and then applying tape
-< Inference evaluation video >
+[inference video link](https://drive.google.com/file/d/12RBoRQTYOQR4K_vKIBg7dE6VhmHZ8O2b/view?usp=drive_link)
+
+Video: inserting the snuck into the box and then applying tape
+[inference video link](https://drive.google.com/file/d/1JSh6CabghTNvpY4dD-8XheDwHwjyRdHf/view?usp=drive_link)
 
 ### Results when training the model on only a subset of tasks:
 The results are poor and the video is long, so saved video as 5x speed.
