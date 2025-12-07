@@ -113,8 +113,7 @@ We intentionally introduce variations into the data, assuming that such “noisy
 [teleoperation video2 link](https://drive.google.com/file/d/1byd6sLCAH1fsUYkJxQuajqRNR_79s2lb/view?usp=drive_link)
 
 ## Training:
-
-TODO:
+To prevent overfitting and underfitting, we adjusted the step number parameter so that the total loss and l1 loss would not become too small.
 
 ## Inference:
 
