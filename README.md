@@ -267,16 +267,4 @@ https://huggingface.co/<HF_USERNAME>/<MISSION2_MODEL_ID>
   - **Weights & Biases** for experiment tracking.
 - Special thanks to the organizers and supporting engineers for providing hardware, software templates, and technical guidance.
 
----
 
-# 📜 License
-
-Please choose and declare a license appropriate for your project (e.g., MIT, Apache-2.0):
-
-```text
-MIT License
-```
-
-*(必要に応じて他のライセンスに変更してください)*
-
----
