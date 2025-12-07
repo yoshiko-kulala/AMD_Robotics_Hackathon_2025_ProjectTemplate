@@ -46,59 +46,109 @@ Masakazu Sueyoshi · Hiroki Kyono  · Kosuke Tokuda
 - Hiroki Kyono  
 
 ---
-# 📝 Summary
+# Mission Description
 
-**PackingMan is an automatic packing system that targets the “last human step” in modern e-commerce logistics: putting items into cardboard boxes.**
 
-## Overview / Objective
-This project develops a robotic system that performs the entire cardboard box packing workflow using a single imitation learning policy with dual arms.
+This project is a robotic system that autonomously performs cardboard box packing, a task that logistics sites still heavily rely on manual labor for, by using imitation learning.
 
-In real logistics environments, packing operations still rely heavily on human skill, especially when dealing with variability, exception handling, material deformation, and fine contact-based adjustments—areas where traditional automation fails.
+The target task consists of real, practical operations such as:
+ - Inserting the workpiece into the box
+ - Placing cushioning material
+ - Closing the lid
+ - Applying packing tape
 
-Our objective is to reproduce human-like adaptability and fine adjustment using imitation learning,enabling autonomous execution of real packing tasks rather than simple pick-and-place operations.
+Each of these is a process that strongly depends on human skill, including:
+ - Exception handling
+ - Fine adjustments
+ - Differences in material properties
+ - Handling deformed or non-ideal shapes
 
-## Achieved / Planned Capabilities
-All operations are executed under a single imitation learning policy using only RGB input
- - Placing a workpiece (cocoa cigarette package or cup) into a cardboard box
- - If the workpiece is a fragile cup, inserting cushioning material using a container (tool-use)
- - Closing the cardboard lid and accurately inserting lid flaps into the slit
- - Receiving tape from a human and sealing the box
+By introducing our robot, we can help solve the problem of labor shortage in on-site logistics operations.
 
-##  Technical Core
-### Unified Policy for Multiple Tasks
- - Workpiece grasping
- - Task switching (placement / cushioning / lid closing / taping)
- - Tool-use manipulation
- - Continuous adjustment with contact feedback
-### RGB-Only Control
- - No point-clouds / CAD models / rigid-body simulation required
- - Robust to real-world variation, friction, deformation, and tolerances
+## Real-world applications
+ - E-commerce logistics warehouses
+ - Online shipping / fulfillment processes
+ - Factory shipping / packing lines
+ - Automation solutions for logistics sites suffering from severe labor shortages
+ - As a “skill transfer” system that performs exemplar motions as a reference for human workers
 
-## Why Imitation Learning? (Differentiation)
-### Conventional Approach Limitation     
-Rule-based control Fails with physical variation and unpredictable contact   
+## Concrete mission details
+1. A workpiece (either a snack or a cup) is placed at a specific position in the field, and the robot places it into a box.
+2. Only when a cup is placed, the robot additionally puts cushioning material into the box.
+3. The robot inserts the box lid flap into the slit and closes the box.
+4. The robot receives a piece of tape from a person standing in front of it and applies the tape onto the box.
 
-### Supervised learning 
-Cannot represent continuous adjustment where no single correct label exists   
+# Creativity
+The originality of this work lies in the following points:
+ - Integrating multiple tasks with a single imitation learning policy
+   - A single policy switches between behaviors such as putting an item into a box, closing the box, and applying tape in order to complete the mission.
+ - Using tools
+   - By using tools, we broaden the range of tasks the robot can execute.
+ - Control using only RGB images
+   - The system performs the task using only RGB camera images, without relying on point clouds, CAD models, or rigid body models, thus succeeding with minimal input information.
+ - Learning fine contact-rich adjustment motions
+   - Inserting the cardboard flap into the slit requires very precise, contact-rich motion. We show that the robot can acquire this behavior through imitation learning.
+ - Learning to receive tape from a human
+   - The system is designed to execute tasks under the assumption of human–robot collaboration.
+   - It can cope with variations in the position and angle of the tape during handover.
+ - Switching behavior depending on the workpiece
+   - The robot learns selective behavior: When the workpiece is a cup, it places cushioning material together with it. When the workpiece is a snack, it does not place cushioning material.
 
-### Optimization / geometric computation 
-Cannot handle bending cardboard, slit alignment, or material differences
+# Technical Implementations
+## Teleoperation / Dataset Capture:
 
-### Strength of Imitation Learning
- - Learns successful trajectories directly
- - Captures sliding, pressing, pushing, micro-adjustments
- - Generalizes across variation (human handover differences, positioning, stiffness)
- - Enables robust execution of tool-use and human interaction
+ - Use two arm
+ - Use two camera: top and front
+ - A human operator performs the real task using a dual-arm teleoperation setup.
+ - Recording work divided into individual steps and a series of steps.
+   - Workpiece insertion
+   - Placing cushioning material
+   - Closing the lid
+   - Applying tape
 
-## Social Impact
- - Addresses the most manual and skill-dependent steps in logistics automation
- - Achieves robust behaviour using only RGB sensing with minimal hardware requirements
- - Proposes a pathway for skill preservation and transfer via imitation learning, rather than brute-force automation
+We intentionally introduce variations into the data, assuming that such “noisy” data contributes to acquiring robustness:
+ - Varying how widely the cardboard box is opened
+ - Variations in position, angle, and timing during tape handover
+ - Variations in the position and orientation of the workpiece
+ - Switching the workpiece between a snack and a cup
 
-This project tackles the core difficulty of real packing tasks—fine adjustment, contact handling, tool use, and human interaction—through a unified imitation learning policy.
-Rather than simply automating movement, we aim to reproduce the essence of human skill, enabling deployment in real logistics environments.
+(Image / video placeholder)
+< Teleoperation OR dataset capture image / video >
 
----
+## Training:
+
+TODO:
+
+## Inference:
+
+### Result of sequence operations (the original goal):
+
+Video: inserting the cup and cushioning material into the box and then applying tape
+< Inference evaluation video >
+
+### Results when training the model on only a subset of tasks:
+
+#### Video: putting a snack into the box and applying tape
+< Inference evaluation video >
+
+#### Video: applying tape only
+< Inference evaluation video >
+
+# Ease of Use
+
+## Task generalization
+ - Directly applicable to similar packing and boxing tasks.
+ - Sensor requirements
+ 　　- Requires only an RGB camera; hardware dependency is extremely low.
+ - Robustness to variation in target objects
+   - Can handle differences in shape and errors in object position and orientation.
+ - Interaction
+   - Generalizes to tasks that include handover with humans and the use of tools.
+ - Engineering cost
+   - No rule-based logic or optimization is required; the system is composed purely of imitation learning.
+ - Operation interface
+   - Only simple “Start” and “Stop” commands are needed.
+   - The system configuration is kept minimal with actual on-site deployment in mind.
 
 # 🚀 How to Reproduce
 
