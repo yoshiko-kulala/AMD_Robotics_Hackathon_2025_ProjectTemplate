@@ -101,10 +101,6 @@ The originality of this work lies in the following points:
  - Use two camera: top and front
  - A human operator performs the real task using a dual-arm teleoperation setup.
  - Recording work divided into individual steps and a series of steps.
-   - Workpiece insertion
-   - Placing cushioning material
-   - Closing the lid
-   - Applying tape
 
 We intentionally introduce variations into the data, assuming that such “noisy” data contributes to acquiring robustness:
  - Varying how widely the cardboard box is opened
@@ -112,8 +108,9 @@ We intentionally introduce variations into the data, assuming that such “noisy
  - Variations in the position and orientation of the workpiece
  - Switching the workpiece between a snack and a cup
 
-(Image / video placeholder)
-< Teleoperation OR dataset capture image / video >
+[teleoperation video1 link](https://drive.google.com/file/d/1JmgPFNL6MkHbD0EpL2dB57tLXZtd_hem/view?usp=drive_link)
+
+[teleoperation video2 link](https://drive.google.com/file/d/1byd6sLCAH1fsUYkJxQuajqRNR_79s2lb/view?usp=drive_link)
 
 ## Training:
 
@@ -127,12 +124,14 @@ Video: inserting the cup and cushioning material into the box and then applying 
 < Inference evaluation video >
 
 ### Results when training the model on only a subset of tasks:
+The results are poor and the video is long, so saved video as 5x speed.
 
+[inference video link](https://drive.google.com/file/d/12RBoRQTYOQR4K_vKIBg7dE6VhmHZ8O2b/view?usp=drive_link)
 #### Video: putting a snack into the box and applying tape
-< Inference evaluation video >
+[inference video link](https://drive.google.com/file/d/1UUb9FRC8vHp2tcHILT6AVFDTYaBPpZTi/view?usp=drive_link)
 
 #### Video: applying tape only
-< Inference evaluation video >
+[inference video link](https://drive.google.com/file/d/1eACJFKnUP5iZNEYRY0kMXcVH_K7o6hfB/view?usp=drive_link)
 
 # Ease of Use
 
