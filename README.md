@@ -50,15 +50,53 @@ Masakazu Sueyoshi · Hiroki Kyono  · Kosuke Tokuda
 
 **PackingMan is an automatic packing system that targets the “last human step” in modern e-commerce logistics: putting items into cardboard boxes.**
 
+## Overview / Objective
+This project develops a robotic system that performs the entire cardboard box packing workflow using a single imitation learning policy with dual arms.
 
+In real logistics environments, packing operations still rely heavily on human skill, especially when dealing with variability, exception handling, material deformation, and fine contact-based adjustments—areas where traditional automation fails.
 
-### Background
+Our objective is to reproduce human-like adaptability and fine adjustment using imitation learning,enabling autonomous execution of real packing tasks rather than simple pick-and-place operations.
 
-### Problem
+## Achieved / Planned Capabilities
+All operations are executed under a single imitation learning policy using only RGB input
+ - Placing a workpiece (cocoa cigarette package or cup) into a cardboard box
+ - If the workpiece is a fragile cup, inserting cushioning material using a container (tool-use)
+ - Closing the cardboard lid and accurately inserting lid flaps into the slit
+ - Receiving tape from a human and sealing the box
 
-While companies like Amazon already automate storage, transport, labeling, and sorting, a large portion of actual box packing is still performed by human workers. PackingMan explores how far we can push imitation learning–based manipulation to close this gap.
-In this project, we use a real robot arm and LeRobot to record human demonstrations of simple packing tasks (such as placing objects into a box and closing the lid), train a policy on an AMD GPU, and then deploy the learned policy back to the real robot. The result is a compact “robot packer” prototype that can repeatedly execute a packing motion learned from humans, demonstrating a practical path toward scalable, flexible packing automation for small to mid-scale warehouses.
+##  Technical Core
+### Unified Policy for Multiple Tasks
+ - Workpiece grasping
+ - Task switching (placement / cushioning / lid closing / taping)
+ - Tool-use manipulation
+ - Continuous adjustment with contact feedback
+### RGB-Only Control
+ - No point-clouds / CAD models / rigid-body simulation required
+ - Robust to real-world variation, friction, deformation, and tolerances
 
+## Why Imitation Learning? (Differentiation)
+### Conventional Approach Limitation     
+Rule-based control Fails with physical variation and unpredictable contact   
+
+### Supervised learning 
+Cannot represent continuous adjustment where no single correct label exists   
+
+### Optimization / geometric computation 
+Cannot handle bending cardboard, slit alignment, or material differences
+
+### Strength of Imitation Learning
+ - Learns successful trajectories directly
+ - Captures sliding, pressing, pushing, micro-adjustments
+ - Generalizes across variation (human handover differences, positioning, stiffness)
+ - Enables robust execution of tool-use and human interaction
+
+## Social Impact
+ - Addresses the most manual and skill-dependent steps in logistics automation
+ - Achieves robust behaviour using only RGB sensing with minimal hardware requirements
+ - Proposes a pathway for skill preservation and transfer via imitation learning, rather than brute-force automation
+
+This project tackles the core difficulty of real packing tasks—fine adjustment, contact handling, tool use, and human interaction—through a unified imitation learning policy.
+Rather than simply automating movement, we aim to reproduce the essence of human skill, enabling deployment in real logistics environments.
 
 ---
 
