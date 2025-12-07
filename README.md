@@ -294,16 +294,16 @@ Please fill in these URLs when everything is uploaded (structureはそのまま�
 
 ```text
 Dataset (Mission 1):
-https://huggingface.co/datasets/<HF_USERNAME>/<MISSION1_DATASET_ID>
+https://huggingface.co/datasets/yoshikokulala/simple_cola4
 
 Dataset (Mission 2 – PackingMan):
-https://huggingface.co/datasets/<HF_USERNAME>/<MISSION2_DATASET_ID>
+https://huggingface.co/datasets/yoshikokulala/hakoccoacup2
 
 Model (Mission 1):
-https://huggingface.co/<HF_USERNAME>/<MISSION1_MODEL_ID>
+https://huggingface.co/yoshikokulala/simple_cola4
 
 Model (Mission 2 – PackingMan):
-https://huggingface.co/<HF_USERNAME>/<MISSION2_MODEL_ID>
+https://huggingface.co/yoshikokulala/hakoccoacup2_ft
 ```
 
 
