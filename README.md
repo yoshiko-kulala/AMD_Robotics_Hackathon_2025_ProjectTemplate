@@ -55,8 +55,8 @@ Masakazu Sueyoshi · Hiroki Kyono  · Kosuke Tokuda
 
 ### Problem
 
-### Proposed method
-
+While companies like Amazon already automate storage, transport, labeling, and sorting, a large portion of actual box packing is still performed by human workers. PackingMan explores how far we can push imitation learning–based manipulation to close this gap.
+In this project, we use a real robot arm and LeRobot to record human demonstrations of simple packing tasks (such as placing objects into a box and closing the lid), train a policy on an AMD GPU, and then deploy the learned policy back to the real robot. The result is a compact “robot packer” prototype that can repeatedly execute a packing motion learned from humans, demonstrating a practical path toward scalable, flexible packing automation for small to mid-scale warehouses.
 
 ---
 
